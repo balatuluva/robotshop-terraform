@@ -19,7 +19,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
 
   tags = {
-    Name = "var.components[count.index]"
+    Name = var.components[count.index]
   }
 }
 #resource "aws_route53_record" "frontend" {
