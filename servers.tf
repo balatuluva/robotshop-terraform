@@ -39,7 +39,7 @@ resource "null_resource" "provisioner" {
       "rm -rf robotshop-shell",
       "git clone https://github.com/balatuluva/robotshop-shell.git"
       "cd robotshop-shell",
-      "sudo bash ${each.value["name"]}.sh"
+      "sudo bash ${each.value["name"]}.sh ${lookup(each.value, "password", "null")}"
     ]
   }
 }
