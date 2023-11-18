@@ -5,6 +5,7 @@ resource "aws_instance" "instance" {
 
   tags = {
     Name = var.component_name
+    #Name = var.env != "" ? "${var.component_name}-${var.env}" : var.component_name terraform condition
   }
 }
 
