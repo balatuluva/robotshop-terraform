@@ -4,6 +4,9 @@ default_vpc_id = "vpc-06cc0012016b947fe"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-086ecde1fe849c0d5"
 kms_arn = "arn:aws:kms:us-east-1:313587121011:key/b4ef00c9-7aa3-4bba-ad5d-54544604bbaa"
+domain_name = "gehana26.online"
+domain_id = "Z086778943HEZIHKI7U9"
+
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -42,6 +45,8 @@ app = {
     max_size = 10
     min_size = 1
     app_port = 80
+    listener_priority = 1
+    lb_type = "public"
   }
   catalogue = {
     name = "catalogue"
@@ -52,6 +57,8 @@ app = {
     max_size = 10
     min_size = 1
     app_port = 8080
+    listener_priority = 2
+    lb_type = "private"
   }
 #  cart = {
 #    name = "cart"
