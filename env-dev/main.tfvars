@@ -60,6 +60,7 @@ app = {
     app_port = 8080
     listener_priority = 2
     lb_type = "private"
+    parameters = ["docdb"]
   }
 #  cart = {
 #    name = "cart"
