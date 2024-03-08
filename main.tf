@@ -111,8 +111,9 @@ module "app" {
   listener_arn = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
   lb_dns_name = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
 
-  tags = local.tags
+  tags = merge(local.tags, {Monitor = "true"})
   env = var.env
+  monitor_cidr = var.monitor_cidr
   bastion_cidr = var.bastion_cidr
   domain_name = var.domain_name
   domain_id = var.domain_id
