@@ -5,8 +5,8 @@ default_vpc_id = "vpc-06cc0012016b947fe"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-086ecde1fe849c0d5"
 kms_arn = "arn:aws:kms:us-east-1:313587121011:key/b4ef00c9-7aa3-4bba-ad5d-54544604bbaa"
-domain_name = "gehana26.online"
-domain_id = "Z086778943HEZIHKI7U9"
+domain_name = "gehana26.fun"
+domain_id = "Z0695756SMJXHSSK5PKP"
 
 vpc = {
   main = {
