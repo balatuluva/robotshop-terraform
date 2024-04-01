@@ -119,3 +119,19 @@ module "app" {
   domain_id = var.domain_id
   kms_arn = var.kms_arn
 }
+
+### Load Runner ###
+data "aws_ami" "ami" {
+  most_recent = true
+  name_regex = "Centos-8-DevOps-Practice"
+  owners = ["973714476881"]
+}
+
+resource "aws_instance" "load" {
+  ami = data.aws_ami.ami.id
+  instance_type = "t3.medium"
+  vpc_security_group_ids = [ "sg-05c34be914087b225" ]
+  tags = {
+    Name = "load-runner"
+  }
+}
